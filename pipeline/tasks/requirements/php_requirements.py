@@ -12,20 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Base class for pipeline task.
+"""Requirements for Php codegen."""
 
-This base class extends taskflow Task class, with additional methods and
-properties used by the GAPIC pipeline."""
-
-from taskflow.task import Task
+from pipeline.tasks.requirements import task_requirement_base
 
 
-class TaskBase(Task):
+class PhpFormatRequirements(task_requirement_base.TaskRequirementBase):
 
-    def validate(self):
-        """Abstract method, which returns a list of task requirements.
+    @classmethod
+    def require(cls):
+        return ['php-cs-fixer']
 
-        Subclass must implement this method and return a list of task requirements
-        classes.
-        """
-        raise NotImplementedError("Subclass must implement abstract method")
+    @classmethod
+    def install(cls):
+        # Intentionally do nothing
+        pass
