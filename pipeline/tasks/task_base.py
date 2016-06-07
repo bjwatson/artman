@@ -25,7 +25,7 @@ class TaskBase(Task):
     def validate(self):
         """Abstract method, which returns a list of task requirements.
 
-        Subclass must implement this method and return a list of task requirements
-        classes.
+        Subclass must implement this method and return a list of task
+        requirements classes.
         """
         raise NotImplementedError("Subclass must implement abstract method")
