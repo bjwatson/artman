@@ -72,8 +72,8 @@ function copyPipelineOutput {
   echo ''
   echo '>>> Copying code into repo'
 
-  cp -av $PACKAGE/* $DSTDIR
-  cp -v *.json $DSTDIR/$PACKAGE
+  mv *.json $PACKAGE
+  cp -av * $DSTDIR
 }
 
 function generatePackage {
