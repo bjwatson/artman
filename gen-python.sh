@@ -39,7 +39,7 @@ function cleanTarget {
   echo '>>> Cleaning up target directory'
 
   git cho .
-  rm -rf .tox docs gax_google_${GAPI_API}_${GAPI_VERSION}.egg-info
+  rm -rf .tox dist docs gax_google_${GAPI_API}_${GAPI_VERSION}.egg-info
   rm -rf google gcloud
   rm -f LICENSE MANIFEST.in PUBLISHING.rst setup.cfg
 }
