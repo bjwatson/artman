@@ -14,8 +14,6 @@ DSTDIR=`readlink -f ../gapi-${GAPI_API}-${GAPI_LANG}`
 PCKDIR=`readlink -f ../packman`
 WEBDIR=/google/data/rw/users/br/brianwatson/www/gapi-${GAPI_API}-${GAPI_LANG}-${GAPI_VERSION}
 
-PACKAGE=gcloud/pubsub
-
 CWD=`pwd`
 export PATH=$PCKDIR/bin:$PATH
 
@@ -57,22 +55,12 @@ function runPipeline {
   rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
 }
 
-function removeProtos {
-  cd $SRCDIR
-
-  echo ''
-  echo '>>> Removing proto files from pipeline output'
-
-  rm -rf $PACKAGE/google
-}
-
 function copyPipelineOutput {
   cd $SRCDIR
 
   echo ''
   echo '>>> Copying code into repo'
 
-  mv *.json $PACKAGE
   cp -av * $DSTDIR
 }
 
@@ -128,7 +116,7 @@ initializePackman
 
 #cleanTarget
 #runPipeline
-#removeProtos
+#TODO: remove the proto files, so we use the grpc-${GAPI_API} package
 #copyPipelineOutput
 #generatePackage
 #runTest
