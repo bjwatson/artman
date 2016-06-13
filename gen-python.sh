@@ -4,9 +4,9 @@
 # Initialize environment variables
 #
 
-GAPI_API=pubsub
+GAPI_API=logging
 GAPI_LANG=python
-GAPI_VERSION=v1
+GAPI_VERSION=v2
 
 SRCDIR=`readlink -f output/${GAPI_API}-${GAPI_VERSION}-gapic-gen-${GAPI_LANG}`
 PROTODIR=`readlink -f output/${GAPI_LANG}`
