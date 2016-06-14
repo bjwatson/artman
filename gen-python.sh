@@ -40,6 +40,7 @@ function cleanTarget {
   rm -rf .tox dist docs gax_google_${GAPI_API}_${GAPI_VERSION}.egg-info
   rm -rf google gcloud
   rm -f LICENSE MANIFEST.in PUBLISHING.rst setup.cfg
+  find . -name '*.pyc' -exec rm {} \;
 }
 
 function runPipeline {
@@ -62,6 +63,9 @@ function copyPipelineOutput {
   echo '>>> Copying code into repo'
 
   cp -av * $DSTDIR
+
+  cd $DSTDIR
+  patch -p1 <$CWD/manual-samples.patch
 }
 
 function generatePackage {

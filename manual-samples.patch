@@ -1,0 +1,82 @@
+diff --git a/google/protobuf/any_pb2.py b/google/protobuf/any_pb2.py
+index bee2a1b..23f2277 100644
+--- a/google/protobuf/any_pb2.py
++++ b/google/protobuf/any_pb2.py
+@@ -22,7 +22,7 @@ class Any(object):
+ 
+     The JSON representation of an ``Any`` value uses the regular
+     representation of the deserialized, embedded message, with an
+-    additional field ``@type`` which contains the type URL. Example:
++    additional field ``@type`` which contains the type URL. Example::
+ 
+         package google.profile;
+         message Person {
+@@ -39,7 +39,7 @@ class Any(object):
+     If the embedded message type is well-known and has a custom JSON
+     representation, that representation will be embedded adding a field
+     ``value`` which holds the custom JSON in addition to the the ``@type``
+-    field. Example (for message ``google.protobuf.Duration``):
++    field. Example (for message ``google.protobuf.Duration``)::
+ 
+         {
+           "@type": "type.googleapis.com/google.protobuf.Duration",
+diff --git a/google/protobuf/timestamp_pb2.py b/google/protobuf/timestamp_pb2.py
+index a85c5a2..6a9a549 100644
+--- a/google/protobuf/timestamp_pb2.py
++++ b/google/protobuf/timestamp_pb2.py
+@@ -27,13 +27,13 @@ class Timestamp(object):
+     and from  RFC 3339 date strings.
+     See `https://www.ietf.org/rfc/rfc3339.txt <https://www.ietf.org/rfc/rfc3339.txt>`_.
+ 
+-    Example 1: Compute Timestamp from POSIX ``time()``.
++    Example 1: Compute Timestamp from POSIX ``time()``. ::
+ 
+         Timestamp timestamp;
+         timestamp.set_seconds(time(NULL));
+         timestamp.set_nanos(0);
+ 
+-    Example 2: Compute Timestamp from POSIX ``gettimeofday()``.
++    Example 2: Compute Timestamp from POSIX ``gettimeofday()``. ::
+ 
+         struct timeval tv;
+         gettimeofday(&tv, NULL);
+@@ -42,7 +42,7 @@ class Timestamp(object):
+         timestamp.set_seconds(tv.tv_sec);
+         timestamp.set_nanos(tv.tv_usec * 1000);
+ 
+-    Example 3: Compute Timestamp from Win32 ``GetSystemTimeAsFileTime()``.
++    Example 3: Compute Timestamp from Win32 ``GetSystemTimeAsFileTime()``. ::
+ 
+         FILETIME ft;
+         GetSystemTimeAsFileTime(&ft);
+@@ -54,7 +54,7 @@ class Timestamp(object):
+         timestamp.set_seconds((INT64) ((ticks / 10000000) - 11644473600LL));
+         timestamp.set_nanos((INT32) ((ticks % 10000000) * 100));
+ 
+-    Example 4: Compute Timestamp from Java ``System.currentTimeMillis()``.
++    Example 4: Compute Timestamp from Java ``System.currentTimeMillis()``. ::
+ 
+         long millis = System.currentTimeMillis();
+ 
+@@ -62,7 +62,7 @@ class Timestamp(object):
+             .setNanos((int) ((millis % 1000) * 1000000)).build();
+ 
+ 
+-    Example 5: Compute Timestamp from current time in Python.
++    Example 5: Compute Timestamp from current time in Python. ::
+ 
+         now = time.time()
+         seconds = int(now)
+diff --git a/google/api/monitored_resource_pb2.py b/google/api/monitored_resource_pb2.py
+index d9eca5c..7e20980 100644
+--- a/google/api/monitored_resource_pb2.py
++++ b/google/api/monitored_resource_pb2.py
+@@ -58,7 +58,7 @@ class MonitoredResource(object):
+     its attributes according to the schema. For example, a particular Compute
+     Engine VM instance could be represented by the following object, because the
+     ``MonitoredResourceDescriptor`` for ``"gce_instance"`` has labels
+-    ``"instance_id"`` and ``"zone"``:
++    ``"instance_id"`` and ``"zone"``::
+ 
+         { "type": "gce_instance",
+           "labels": { "instance_id": "my-instance",
