@@ -4,15 +4,13 @@
 # Initialize environment variables
 #
 
-GAPI_API=logging
+GAPI_API=pubsub
 GAPI_LANG=python
-GAPI_VERSION=v2
+GAPI_VERSION=v1
 
-SRCDIR=`readlink -f output/${GAPI_API}-${GAPI_VERSION}-gapic-gen-${GAPI_LANG}`
-PROTODIR=`readlink -f output/${GAPI_LANG}`
+SRCDIR=`readlink -f output/${GAPI_LANG}`
 DSTDIR=`readlink -f ../grpc-${GAPI_API}-${GAPI_LANG}`
 PCKDIR=`readlink -f ../packman`
-WEBDIR=/google/data/rw/users/br/brianwatson/www/gapi-${GAPI_API}-${GAPI_LANG}-${GAPI_VERSION}
 
 CWD=`pwd`
 export PATH=$PCKDIR/bin:$PATH
@@ -28,6 +26,15 @@ function initializePackman {
   echo '>>> Initializing Packman'
 
   npm install
+}
+
+function cleanOutput {
+  cd $CWD
+
+  echo ''
+  echo '>>> Cleaning up target directory'
+
+  rm -rf $SRCDIR
 }
 
 function cleanTarget {
@@ -62,17 +69,7 @@ function copyPipelineOutput {
   echo ''
   echo '>>> Copying code into repo'
 
-  cp -av * $DSTDIR
-}
-
-function generatePackage {
-  cd $DSTDIR
-
-  echo ''
-  echo '>>> Generating API package'
-
-  gen-api-package --api_name=${GAPI_API}/${GAPI_VERSION} --gax_dir=$DSTDIR -l ${GAPI_LANG}
-  rc=$?; if [[ $rc != 0 ]]; then exit $rc; fi
+  cp -av google MANIFEST.in README.rst setup.py $DSTDIR
 }
 
 #
@@ -81,7 +78,7 @@ function generatePackage {
 
 initializePackman
 
+cleanOutput
 cleanTarget
 runPipeline
 copyPipelineOutput
-#generatePackage
