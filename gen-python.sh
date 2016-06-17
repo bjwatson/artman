@@ -129,5 +129,5 @@ cleanTarget
 runPipeline
 copyPipelineOutput
 generatePackage
-genDocs
-publishDocs
+#genDocs
+#publishDocs
