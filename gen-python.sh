@@ -39,7 +39,7 @@ function cleanTarget {
   git cho .
   rm -rf .tox dist docs gax_google_${GAPI_API}_${GAPI_VERSION}.egg-info
   rm -rf google gcloud
-  rm -f LICENSE MANIFEST.in PUBLISHING.rst setup.cfg
+  rm -f MANIFEST.in PUBLISHING.rst setup.cfg
   find . -name '*.pyc' -exec rm {} \;
 }
 
