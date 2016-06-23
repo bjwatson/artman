@@ -1,8 +1,21 @@
+diff --git a/google/api/monitored_resource_pb2.py b/google/api/monitored_resource_pb2.py
+index d9eca5c..7e20980 100644
+--- a/google/api/monitored_resource_pb2.py
++++ b/google/api/monitored_resource_pb2.py
+@@ -58,7 +58,7 @@ class MonitoredResource(object):
+     its attributes according to the schema. For example, a particular Compute
+     Engine VM instance could be represented by the following object, because the
+     ``MonitoredResourceDescriptor`` for ``"gce_instance"`` has labels
+-    ``"instance_id"`` and ``"zone"``:
++    ``"instance_id"`` and ``"zone"``::
+ 
+         { "type": "gce_instance",
+           "labels": { "instance_id": "my-instance",
 diff --git a/google/protobuf/any_pb2.py b/google/protobuf/any_pb2.py
-index bee2a1b..23f2277 100644
+index 98b7fb0..675c449 100644
 --- a/google/protobuf/any_pb2.py
 +++ b/google/protobuf/any_pb2.py
-@@ -22,7 +22,7 @@ class Any(object):
+@@ -23,7 +23,7 @@ class Any(object):
  
      The JSON representation of an ``Any`` value uses the regular
      representation of the deserialized, embedded message, with an
@@ -11,10 +24,10 @@ index bee2a1b..23f2277 100644
  
          package google.profile;
          message Person {
-@@ -39,7 +39,7 @@ class Any(object):
+@@ -40,7 +40,7 @@ class Any(object):
      If the embedded message type is well-known and has a custom JSON
      representation, that representation will be embedded adding a field
-     ``value`` which holds the custom JSON in addition to the the ``@type``
+     ``value`` which holds the custom JSON in addition to the ``@type``
 -    field. Example (for message ``google.protobuf.Duration``):
 +    field. Example (for message ``google.protobuf.Duration``)::
  
@@ -67,16 +80,3 @@ index a85c5a2..6a9a549 100644
  
          now = time.time()
          seconds = int(now)
-diff --git a/google/api/monitored_resource_pb2.py b/google/api/monitored_resource_pb2.py
-index d9eca5c..7e20980 100644
---- a/google/api/monitored_resource_pb2.py
-+++ b/google/api/monitored_resource_pb2.py
-@@ -58,7 +58,7 @@ class MonitoredResource(object):
-     its attributes according to the schema. For example, a particular Compute
-     Engine VM instance could be represented by the following object, because the
-     ``MonitoredResourceDescriptor`` for ``"gce_instance"`` has labels
--    ``"instance_id"`` and ``"zone"``:
-+    ``"instance_id"`` and ``"zone"``::
- 
-         { "type": "gce_instance",
-           "labels": { "instance_id": "my-instance",
