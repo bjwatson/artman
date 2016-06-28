@@ -12,7 +12,7 @@ SRCDIR=`readlink -f output/${GAPI_API}-${GAPI_VERSION}-gapic-gen-${GAPI_LANG}`
 PROTODIR=`readlink -f output/${GAPI_LANG}`
 DSTDIR=`readlink -f ../gapi-${GAPI_API}-${GAPI_LANG}`
 PCKDIR=`readlink -f ../packman`
-WEBDIR=/google/data/rw/users/br/brianwatson/www/gapi-${GAPI_API}-${GAPI_LANG}-${GAPI_VERSION}
+WEBDIR=$WWW/gapi-${GAPI_API}-${GAPI_LANG}-${GAPI_VERSION}
 
 CWD=`pwd`
 export PATH=$PCKDIR/bin:$PATH
