@@ -1,7 +1,7 @@
-diff --git a/google/api/monitored_resource_pb2.py b/google/api/monitored_resource_pb2.py
+diff --git b/google/api/monitored_resource_pb2.py a/google/api/monitored_resource_pb2.py
 index d9eca5c..7e20980 100644
---- a/google/api/monitored_resource_pb2.py
-+++ b/google/api/monitored_resource_pb2.py
+--- b/google/api/monitored_resource_pb2.py
++++ a/google/api/monitored_resource_pb2.py
 @@ -58,7 +58,7 @@ class MonitoredResource(object):
      its attributes according to the schema. For example, a particular Compute
      Engine VM instance could be represented by the following object, because the
@@ -11,11 +11,29 @@ index d9eca5c..7e20980 100644
  
          { "type": "gce_instance",
            "labels": { "instance_id": "my-instance",
-diff --git a/google/protobuf/any_pb2.py b/google/protobuf/any_pb2.py
-index 98b7fb0..675c449 100644
---- a/google/protobuf/any_pb2.py
-+++ b/google/protobuf/any_pb2.py
-@@ -23,7 +23,7 @@ class Any(object):
+diff --git b/google/protobuf/any_pb2.py a/google/protobuf/any_pb2.py
+index 617eb03..95fc81e 100644
+--- b/google/protobuf/any_pb2.py
++++ a/google/protobuf/any_pb2.py
+@@ -21,7 +21,7 @@ class Any(object):
+     Protobuf library provides support to pack/unpack Any values in the form
+     of utility functions or additional generated methods of the Any type.
+ 
+-    Example 1: Pack and unpack a message in C++.
++    Example 1: Pack and unpack a message in C++. ::
+ 
+         Foo foo = ...;
+         Any any;
+@@ -31,7 +31,7 @@ class Any(object):
+           ...
+         }
+ 
+-    Example 2: Pack and unpack a message in Java.
++    Example 2: Pack and unpack a message in Java. ::
+ 
+         Foo foo = ...;
+         Any any = Any.pack(foo);
+@@ -51,7 +51,7 @@ class Any(object):
  
      The JSON representation of an ``Any`` value uses the regular
      representation of the deserialized, embedded message, with an
@@ -24,7 +42,7 @@ index 98b7fb0..675c449 100644
  
          package google.profile;
          message Person {
-@@ -40,7 +40,7 @@ class Any(object):
+@@ -68,7 +68,7 @@ class Any(object):
      If the embedded message type is well-known and has a custom JSON
      representation, that representation will be embedded adding a field
      ``value`` which holds the custom JSON in addition to the ``@type``
@@ -33,10 +51,10 @@ index 98b7fb0..675c449 100644
  
          {
            "@type": "type.googleapis.com/google.protobuf.Duration",
-diff --git a/google/protobuf/timestamp_pb2.py b/google/protobuf/timestamp_pb2.py
+diff --git b/google/protobuf/timestamp_pb2.py a/google/protobuf/timestamp_pb2.py
 index a85c5a2..6a9a549 100644
---- a/google/protobuf/timestamp_pb2.py
-+++ b/google/protobuf/timestamp_pb2.py
+--- b/google/protobuf/timestamp_pb2.py
++++ a/google/protobuf/timestamp_pb2.py
 @@ -27,13 +27,13 @@ class Timestamp(object):
      and from  RFC 3339 date strings.
      See `https://www.ietf.org/rfc/rfc3339.txt <https://www.ietf.org/rfc/rfc3339.txt>`_.
