@@ -11,9 +11,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     man-db \
     pkg-config \
-    # Needed by gcloud-python
+    # Needed by google-cloud-python
     libffi-dev \
-    # Needed by gcloud-python
+    # Needed by google-cloud-python
     libssl-dev \
     curl \
     kdiff3 \

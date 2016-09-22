@@ -20,7 +20,7 @@ import shutil
 import urllib
 import zipfile
 
-from gcloud import storage
+from google-cloud import storage
 from pipeline.tasks import task_base
 
 

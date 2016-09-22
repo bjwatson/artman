@@ -36,7 +36,7 @@ def packman_api_name(api_name):
 
 
 def is_output_gcloud(language, final_repo_dir):
-    """Check if the final_repo_dir is a part of gcloud project.
+    """Check if the final_repo_dir is part of a google-cloud-* project.
     """
     final_repo_dir = os.path.abspath(final_repo_dir)
     if language == 'nodejs':
