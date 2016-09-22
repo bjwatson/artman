@@ -45,8 +45,8 @@ import time
 import uuid
 import yaml
 
-from google-cloud import storage
-from google-cloud import logging
+from google.cloud import storage
+from google.cloud import logging
 from taskflow import engines, task, states
 from pipeline.pipelines import pipeline_factory
 from pipeline.utils import job_util, pipeline_util, config_util

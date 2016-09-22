@@ -19,7 +19,7 @@ properties used by the GAPIC pipeline."""
 
 import subprocess
 
-from google-cloud import logging as cloud_logging
+from google.cloud import logging as cloud_logging
 from taskflow.task import Task
 
 
